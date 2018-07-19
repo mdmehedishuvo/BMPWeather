@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/h3"
+    android:layout_height="match_parent"
+    tools:context=".TodayWeatherFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:theme="@style/txt"
+        android:text="Hourly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textSize="22dp"
+                android:textColor="@android:color/white"
+                android:text="Now"
+                android:id="@+id/txtDailyHour0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/txt.HourPercent"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/txtDailyPercent0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/weather_image"
+                android:layout_width="50dp"
+                android:id="@+id/imageDaily0"
+                android:layout_marginLeft="10dp"
+                android:layout_height="50dp" />
+
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                style="@style/txt.Hour"
+                android:text="23°c"
+                android:id="@+id/txtDailyTemp0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily6"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily7"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily8"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily9"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily10"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily11"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily12"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily13"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily14"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily15"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily16"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily17"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily18"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textSize="22dp"
+                    android:textColor="@android:color/white"
+                    android:text="Now"
+                    android:id="@+id/txtDailyHour19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/txt.HourPercent"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/txtDailyPercent19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="50dp"
+                    android:id="@+id/imageDaily19"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="50dp" />
+
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    style="@style/txt.Hour"
+                    android:text="23°c"
+                    android:id="@+id/txtDailyTemp19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+    <View
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+
+    <TextView
+        android:theme="@style/txt"
+        android:text="Daily"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <View
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDailyDay0"
+            style="@style/txt.Hour"
+            android:text="ThusesDay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageHourly0"
+            android:src="@drawable/weather_image"
+            android:layout_width="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="50dp" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMin0"
+            style="@style/txt.Hour"
+            android:text="20°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMax0"
+            style="@style/txt.Hour"
+            android:text="26°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDailyDay1"
+            style="@style/txt.Hour"
+            android:text="ThusesDay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageHourly1"
+            android:src="@drawable/weather_image"
+            android:layout_width="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="50dp" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMin1"
+            style="@style/txt.Hour"
+            android:text="20°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMax1"
+            style="@style/txt.Hour"
+            android:text="26°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDailyDay2"
+            style="@style/txt.Hour"
+            android:text="ThusesDay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageHourly2"
+            android:src="@drawable/weather_image"
+            android:layout_width="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="50dp" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMin2"
+            style="@style/txt.Hour"
+            android:text="20°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMax2"
+            style="@style/txt.Hour"
+            android:text="26°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDailyDay3"
+            style="@style/txt.Hour"
+            android:text="ThusesDay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageHourly3"
+            android:src="@drawable/weather_image"
+            android:layout_width="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="50dp" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMin3"
+            style="@style/txt.Hour"
+            android:text="20°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMax3"
+            style="@style/txt.Hour"
+            android:text="26°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDailyDay4"
+            style="@style/txt.Hour"
+            android:text="ThusesDay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageHourly4"
+            android:src="@drawable/weather_image"
+            android:layout_width="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="50dp" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMin4"
+            style="@style/txt.Hour"
+            android:text="20°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMax4"
+            style="@style/txt.Hour"
+            android:text="26°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDailyDay5"
+            style="@style/txt.Hour"
+            android:text="ThusesDay"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageHourly5"
+            android:src="@drawable/weather_image"
+            android:layout_width="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="50dp" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMin5"
+            style="@style/txt.Hour"
+            android:text="20°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/txtDailyMax5"
+            style="@style/txt.Hour"
+            android:text="26°c"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:theme="@style/txt"
+            android:text="Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:src="@drawable/weather_image"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp" />
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Feels Like"
+                            style="@style/txt.Details"
+                            android:layout_gravity="start"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:text="95°"
+                            style="@style/txt.Details"
+                            android:layout_gravity="end"
+                            android:layout_width="0dp"
+                            android:id="@+id/txtDetailsFeelisLike"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Humidity"
+                            style="@style/txt.Details"
+                            android:layout_gravity="start"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:text="90%"
+                            style="@style/txt.Details"
+                            android:layout_gravity="end"
+                            android:id="@+id/txtDetailsHumidity"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="Visibility"
+                            style="@style/txt.Details"
+                            android:layout_gravity="start"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtDetailsVisibily"
+                            android:text="10 mls"
+                            style="@style/txt.Details"
+                            android:layout_gravity="end"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:text="UV Index"
+                            style="@style/txt.Details"
+                            android:layout_gravity="start"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:text="0(Low)"
+                            style="@style/txt.Details"
+                            android:layout_gravity="end"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content" />
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="Tonight - Cloudy. Winds from SSE to E. The overnight low will be 80 °F (26.7 °C)."
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="18dp"
+                android:id="@+id/txtDetailsCondition1"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="Today - Thunderstorms with a high of 92 °F (33.3 °C). Winds variable."
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="18dp"
+                android:id="@+id/txtDetailsCondition2"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:theme="@style/txt"
+            android:text="Sun &amp; Moon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="131dp"
+                android:layout_marginRight="131dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/monspace" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="First Quarter"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:srcCompat="@drawable/sun" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="44dp"
+                android:layout_height="29dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="26dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/txtSunSet"
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:srcCompat="@drawable/sun1" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="30dp"
+                android:layout_height="23dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="72dp"
+                android:layout_marginLeft="73dp"
+                android:layout_marginRight="72dp"
+                android:layout_marginStart="73dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:srcCompat="@drawable/moon3" />
+
+            <TextView
+                android:id="@+id/txtSunSet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="5.20 am"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/txtMoon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="57dp"
+                android:layout_marginRight="57dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="6.55 pm"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        </android.support.constraint.ConstraintLayout>
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:theme="@style/txt"
+            android:text="map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+
+        <View
+            android:id="@+id/mapCointainer"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/h1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+
+
+
+    </LinearLayout>
+</ScrollView>

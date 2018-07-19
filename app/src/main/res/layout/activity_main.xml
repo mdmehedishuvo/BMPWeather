@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/detail_backdrop_height"
+        android:background="@drawable/h1"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/txtCurrentPlactName"
+                    android:layout_width="189dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="109dp"
+                    android:layout_marginLeft="86dp"
+                    android:layout_marginStart="86dp"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="18sp"
+                    android:text="Dhaka,Bangladesh"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/roboto_mono"
+                    app:layout_constraintBottom_toTopOf="@+id/txtToday"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtCurrentTemp"
+                    android:layout_width="90dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="83dp"
+                    android:text="30°c"
+                    android:textColor="@android:color/white"
+                    android:textSize="36sp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintBottom_toTopOf="@+id/txtCurrentMin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.431"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtCurrentWeatherCondition"
+                    android:layout_width="130dp"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Rain"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/roboto_mono"
+                    app:layout_constraintBottom_toTopOf="@+id/txtCurrentTemp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtToday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginStart="44dp"
+                    android:text="Today"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/roboto_mono"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/txtCurrentMin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCurrentPlactName" />
+
+                <TextView
+                    android:id="@+id/txtCurrentMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginRight="22dp"
+                    android:drawableLeft="@drawable/down"
+                    android:text="22°c"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/txtCurrentMax"
+                    app:layout_constraintStart_toEndOf="@+id/txtToday"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCurrentTemp" />
+
+                <TextView
+                    android:id="@+id/txtCurrentMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="37dp"
+                    android:layout_marginEnd="59dp"
+                    android:layout_marginRight="59dp"
+                    android:drawableLeft="@drawable/up1"
+                    android:text="34°c"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/roboto_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txtCurrentMin"
+                    app:layout_constraintTop_toTopOf="@+id/txtToday" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <include layout="@layout/content_main" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

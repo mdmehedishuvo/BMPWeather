@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:title="Settings"  android:id="@+id/itemSettings"/>
+    <item android:title="About Us"  android:id="@+id/itemAbout"/>
+    <item android:title="Feedback"  android:id="@+id/itemFeedback"/>
+
+    <item
+        android:id="@+id/itemSearch"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="Search"/>
+
+</menu>
