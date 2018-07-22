@@ -1,14 +1,1209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/h3"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary1"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour0"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
 
 
+                        <TextView
+                            android:id="@+id/txtHourTemp0"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition0"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind0"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly0"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour1"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp1"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition1"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind1"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly1"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour2"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp2"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition2"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind2"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly2"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour3"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp3"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition3"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind3"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly3"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour4"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp4"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition4"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind4"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly4"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour5"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp5"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition5"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind5"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly5"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour6"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp6"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition6"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind6"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly6"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour7"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp7"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition7"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind7"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly7"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour8"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp8"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition8"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind8"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly8"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour9"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp9"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition9"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind9"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly9"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour10"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp10"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition10"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind10"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly10"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour11"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp11"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition11"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind11"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly11"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour12"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp12"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition12"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind12"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly12"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour13"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp13"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition13"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind13"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly13"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                android:layout_marginBottom="2dp"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:padding="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDailyHour14"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="July 20  6:00:00 PM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourTemp14"
+                            android:textSize="25dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="তাপমাত্রা: 20°c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourCondition14"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="অবস্তা: Rain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                        <TextView
+                            android:id="@+id/txtHourWind14"
+                            android:textSize="19dp"
+                            android:textColor="@android:color/white"
+                            android:fontFamily="@font/arimo"
+                            android:text="বাতাসের গতিবেগ: 20.6m/s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageHourly14"
+                            android:src="@drawable/weather_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>

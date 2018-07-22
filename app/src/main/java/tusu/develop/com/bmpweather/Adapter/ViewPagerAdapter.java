@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import tusu.develop.com.bmpweather.Another_fragment;
+import tusu.develop.com.bmpweather.Daily_Fragment;
+import tusu.develop.com.bmpweather.Next_fragment;
 import tusu.develop.com.bmpweather.TodayWeatherFragment;
 import tusu.develop.com.bmpweather.ZilaWeatherFragment;
 
@@ -23,9 +26,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         if (position==0){
-            return new TodayWeatherFragment();
+            return new Daily_Fragment();
         }else if (position==1){
-            return new ZilaWeatherFragment();
+            return new Next_fragment();
+        }else if (position==2){
+            return new Another_fragment();
         }
 
         return null;
@@ -33,6 +38,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 }
