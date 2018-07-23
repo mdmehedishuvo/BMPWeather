@@ -3,17 +3,14 @@ package tusu.develop.com.bmpweather;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -36,15 +33,12 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.AutocompletePrediction;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.PlaceBuffer;
 import com.google.android.gms.location.places.Places;
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
-import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -53,10 +47,7 @@ import com.google.android.gms.tasks.Task;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import retrofit2.Call;
@@ -66,16 +57,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import tusu.develop.com.bmpweather.Adapter.PlaceAutocompleteAdapter;
 import tusu.develop.com.bmpweather.Adapter.ViewPagerAdapter;
-import tusu.develop.com.bmpweather.Api.OpenWeatherAPI;
 import tusu.develop.com.bmpweather.Api.WUnderGroundsAPI;
-import tusu.develop.com.bmpweather.Api.YahooApi;
-import tusu.develop.com.bmpweather.OpenWeather.OpenWeatherMain;
 import tusu.develop.com.bmpweather.ShareperencesData.UserPreferences;
 import tusu.develop.com.bmpweather.UnderGrounds_f_weather.UnForecast;
-import tusu.develop.com.bmpweather.WnderGroundsHourWeather.WnderGroundsHourWeather;
 import tusu.develop.com.bmpweather.WunderGroundsSky.WunderGroundsSky;
 import tusu.develop.com.bmpweather.WundergroundWeather.UnderGroundsWeather;
-import tusu.develop.com.bmpweather.YahooWeather.YahooWeather;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
@@ -94,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private static final String FINE_LOCATIONS= Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COURSE_LOCATIONS=Manifest.permission.ACCESS_COARSE_LOCATION;
     private static final int LOCATION_PERMISSIN_REQUEST_CODE=1234;
-    private static final float DEFAULT_ZOOM=14f;
     private AutoCompleteTextView autoCompleteText;
     private PlaceAutocompleteAdapter mPlaceAutocompleteAdapter;
     private GoogleApiClient mGoogleApiClient;
@@ -105,16 +90,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     //vars
     private Boolean mLocatiionsPermissionGranted=false;
-    private GoogleMap map;
     private FusedLocationProviderClient fusedLocationProviderClient;
 
 
-    private YahooApi yahooApi;
     private WUnderGroundsAPI wUnderGroundsAPI;
 
     private String condition;
 
-    String hour0,hour1;
 
     public static final String YAHOO_BASE_URL="https://query.yahooapis.com/v1/public/";
     public static final String OPEN_WEATHER_BASE_URL="https://api.openweathermap.org/data/2.5/";
@@ -433,8 +415,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.itemAbout:
-                Intent intent=new Intent(MainActivity.this,SSSSSSSSSS.class);
-                startActivity(intent);
+
                 return true;
         }
         return super.onOptionsItemSelected(item);

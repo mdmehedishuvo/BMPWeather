@@ -2,33 +2,24 @@ package tusu.develop.com.bmpweather;
 
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,9 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import tusu.develop.com.bmpweather.Adapter.HourAdapter;
-import tusu.develop.com.bmpweather.Api.OpenWeatherAPI;
 import tusu.develop.com.bmpweather.Api.WUnderGroundsAPI;
-import tusu.develop.com.bmpweather.OpenWeather.OpenWeatherMain;
 import tusu.develop.com.bmpweather.WnderGroundsHourWeather.WnderGroundsHourWeather;
 
 import static tusu.develop.com.bmpweather.MainActivity.WUnderGrounds_BASE_URL;

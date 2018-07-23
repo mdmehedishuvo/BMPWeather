@@ -8,8 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import tusu.develop.com.bmpweather.Another_fragment;
 import tusu.develop.com.bmpweather.Daily_Fragment;
 import tusu.develop.com.bmpweather.Next_fragment;
-import tusu.develop.com.bmpweather.TodayWeatherFragment;
-import tusu.develop.com.bmpweather.ZilaWeatherFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 

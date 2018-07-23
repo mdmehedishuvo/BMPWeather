@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="detail_backdrop_height">350dp</dimen>
+    <dimen name="detail_backdrop_height">330dp</dimen>
 </resources>
