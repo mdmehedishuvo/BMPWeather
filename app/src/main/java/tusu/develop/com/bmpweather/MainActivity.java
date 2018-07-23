@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private CoordinatorLayout coordinatorLayout;
 
     private TextView txtPlaceName,txtWeatherCondition,txtCurrentTemp,txtMin,txtMax,txtDailyVisibily,txtDetailsVisibily;
-    private UserPreferences userPreferences;
     private TextView txtSunrise,txtSunset;
     private ImageView imageCurrent;
 
