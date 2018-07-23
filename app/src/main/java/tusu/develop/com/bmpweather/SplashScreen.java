@@ -16,23 +16,7 @@ public class SplashScreen extends AppCompatActivity {
 
 
     private static final String TAG = "SplashScreen";
-    private static final String FINE_LOCATIONS= Manifest.permission.ACCESS_FINE_LOCATION;
-    private static final String COURSE_LOCATIONS=Manifest.permission.ACCESS_COARSE_LOCATION;
-    private static final int LOCATION_PERMISSIN_REQUEST_CODE=1234;
-    private static final float DEFAULT_ZOOM=14f;
 
-
-    //vars
-    private Boolean mLocatiionsPermissionGranted=false;
-    private GoogleMap map;
-    private FusedLocationProviderClient fusedLocationProviderClient;
-    private UserPreferences userPreferences;
-
-
-    private WUnderGroundsAPI wUnderGroundsAPI;
-
-    public static final String YAHOO_BASE_URL="https://query.yahooapis.com/v1/public/";
-    public static final String WUnderGrounds_BASE_URL="http://api.wunderground.com/";
 
 
     @Override
@@ -48,7 +32,7 @@ public class SplashScreen extends AppCompatActivity {
                 SplashScreen.this.startActivity(mainIntent);
                 SplashScreen.this.finish();
             }
-        }, 5000);
+        }, 3000);
 
     }
 }

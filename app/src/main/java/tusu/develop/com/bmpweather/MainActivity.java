@@ -2,7 +2,9 @@ package tusu.develop.com.bmpweather;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
@@ -20,6 +22,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -37,6 +40,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -80,12 +87,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     private CoordinatorLayout coordinatorLayout;
 
-    private TextView txtPlaceName,txtWeatherCondition,txtCurrentTemp,txtMin,txtMax;
+    private TextView txtPlaceName,txtWeatherCondition,txtCurrentTemp,txtMin,txtMax,txtDailyVisibily,txtDetailsVisibily;
     private UserPreferences userPreferences;
     private TextView txtSunrise,txtSunset;
     private ImageView imageCurrent;
 
     private String answer;
+    private InterstitialAd interstitial;
 
 
     private static final String TAG = "MainActivity";
@@ -135,6 +143,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         txtSunrise=findViewById(R.id.txtSunrise);
         txtSunset=findViewById(R.id.txtSunSet);
         imageCurrent=findViewById(R.id.imageCurrent);
+        txtDailyVisibily=findViewById(R.id.txtDailyVisibility);
+        txtDetailsVisibily=findViewById(R.id.txtDetailsVisibily);
 
 
         initCollapsingToolbar();
@@ -169,9 +179,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             }
         });
 
-        userPreferences=new UserPreferences(MainActivity.this);
         autoCompleteText =  findViewById(R.id.input_search);
-
 
 
 
@@ -187,11 +195,58 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             if(activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
                 answer="You are connected to a Mobile Network";
         }
-        else
-            answer = "No internet Connectivity";
-        Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_LONG).show();
+        else{
+
+            final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Please Check Your InternetConnections");
+            builder.setCancelable(true);
+            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+
+                }
+            });
+            builder.setPositiveButton("close!", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }
 
 
+        MobileAds.initialize(this, getString(R.string.admob_app_id));
+        AdRequest adIRequest = new AdRequest.Builder().build();
+
+        // Prepare the Interstitial Ad Activity
+        interstitial = new InterstitialAd(MainActivity.this);
+
+        // Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.intesestial_ads_token1));
+
+        // Interstitial Ad load Request
+        interstitial.loadAd(adIRequest);
+
+        // Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener()
+        {
+            public void onAdLoaded()
+            {
+                // Call displayInterstitial() function when the Ad loads
+                displayInterstitial();
+            }
+        });
+
+
+    }
+
+    private void displayInterstitial() {
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
     }
 
 
@@ -352,6 +407,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     txtSunrise.setText("সূর্যোদয়: "+sunrise);
                     txtSunset.setText("   সূর্যাস্ত: "+sunset);
 
+
+
                 }
             }
 
@@ -393,6 +450,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                     condition=underGroundsWeather.getCurrentObservation().getTempC().toString()+"°c";
 
+                    txtDailyVisibily.setText("চাপ: "+underGroundsWeather.getCurrentObservation().getPressureMb().toString()+" hPa");
+                    txtDetailsVisibily.setText("বাতাসের গতিবেগ: "+underGroundsWeather.getCurrentObservation().getPressureIn().toString()+"m/s");
+
                 }
             }
 
@@ -418,8 +478,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     Toast.makeText(MainActivity.this, "Data Founds", Toast.LENGTH_SHORT).show();
                     UnForecast underGroundsForecastWeather=response.body();
 
-                    txtMin.setText("সর্বোনিম্ন:  "+underGroundsForecastWeather.getForecast().getSimpleforecast().getForecastday().get(0).getLow().getCelsius()+"°c");
-                    txtMax.setText("সর্বোচ্চ:    "+underGroundsForecastWeather.getForecast().getSimpleforecast().getForecastday().get(0).getHigh().getCelsius()+"°c");
+                    txtMin.setText("সর্বোনিম্ন:  "+underGroundsForecastWeather.getForecast().getSimpleforecast().getForecastday().get(0).getLow().getCelsius()+"°c    ↓");
+                    txtMax.setText("   সর্বোচ্চ:  "+underGroundsForecastWeather.getForecast().getSimpleforecast().getForecastday().get(0).getHigh().getCelsius()+"°c   ↑");
 
                 }
             }
@@ -572,6 +632,27 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         }
     };
 
+    @Override
+    public void onBackPressed() {
 
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage("Are you want to do this");
+        builder.setCancelable(true);
+        builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setPositiveButton("close!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
 }
 

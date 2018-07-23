@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:layout_marginLeft="10dp"
-                    android:text="Dhaka,Bangladesh"
+                    android:text=""
                     android:textColor="@android:color/white"
                     android:textSize="20dp" />
 
@@ -80,7 +80,7 @@
                         android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif"
                         android:gravity="start"
-                        android:text="30°c"
+                        android:text=""
                         android:textColor="@android:color/white"
                         android:textSize="35dp" />
 
@@ -90,7 +90,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="Rain"
+                        android:text=""
                         android:textColor="@android:color/white"
                         android:textSize="20dp" />
 
@@ -101,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:fontFamily="sans-serif"
                         android:layout_height="wrap_content"
-                        android:text="বাতাসের গতিবেগ: 20.6m/s"
+                        android:text=""
                         android:textColor="@android:color/white"
                         android:textSize="17dp" />
 
@@ -110,7 +110,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="চাপ: 996.0 hPa"
+                        android:text=""
+                        android:id="@+id/txtDailyVisibility"
                         android:textColor="@android:color/white"
                         android:textSize="20dp" />
 
@@ -118,11 +119,9 @@
                     <TextView
                         android:id="@+id/txtCurrentMax"
                         android:drawablePadding="10dp"
-                        android:drawableRight="@drawable/up1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="সর্বোচ্চ:    35°c"
                         android:textColor="@android:color/white"
                         android:textSize="20dp" />
 
@@ -131,8 +130,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="সর্বোনিম্ন: 24°c"
-                        android:drawableRight="@drawable/down"
                         android:drawablePadding="10dp"
                         android:textColor="@android:color/white"
                         android:textSize="20dp" />
@@ -154,15 +151,13 @@
                         android:layout_height="100dp"
                         android:layout_gravity="end"
                         android:layout_marginRight="20dp"
-                        android:layout_marginTop="40dp"
-                        android:src="@drawable/weather_image" />
+                        android:layout_marginTop="40dp"/>
 
                     <TextView
                         android:id="@+id/txtSunrise"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="সূর্যোদয়: 5.20 am"
                         android:textColor="@android:color/white"
                         android:textSize="18dp" />
 
@@ -171,7 +166,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="   সূর্যাস্ত: 7.00 pm"
                         android:textColor="@android:color/white"
                         android:textSize="18dp" />
 
