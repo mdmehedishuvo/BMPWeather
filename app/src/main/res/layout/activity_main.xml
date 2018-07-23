@@ -5,7 +5,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/h3"
+    android:background="@color/colorPrimary3"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
@@ -93,6 +93,7 @@
                         android:text="Rain"
                         android:textColor="@android:color/white"
                         android:textSize="20dp" />
+
 
 
                     <TextView
@@ -193,6 +194,7 @@
 
 
     <include layout="@layout/content_main" />
+
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"

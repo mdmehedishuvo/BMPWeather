@@ -1,14 +1,21 @@
 package tusu.develop.com.bmpweather;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -29,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -70,10 +78,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
-    private TextView txtPlaceName,txtWeatherCondition,txtCurrentTemp,txtMin,txtMax,txtTodayDay;
+    private CoordinatorLayout coordinatorLayout;
+
+    private TextView txtPlaceName,txtWeatherCondition,txtCurrentTemp,txtMin,txtMax;
     private UserPreferences userPreferences;
     private TextView txtSunrise,txtSunset;
     private ImageView imageCurrent;
+
+    private String answer;
 
 
     private static final String TAG = "MainActivity";
@@ -97,9 +109,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     private String condition;
 
-
-    public static final String YAHOO_BASE_URL="https://query.yahooapis.com/v1/public/";
-    public static final String OPEN_WEATHER_BASE_URL="https://api.openweathermap.org/data/2.5/";
     public static final String WUnderGrounds_BASE_URL="http://api.wunderground.com/";
 
 
@@ -111,6 +120,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+        coordinatorLayout=findViewById(R.id.main_content);
+
+        coordinatorLayout.setVisibility(View.VISIBLE);
 
 
         txtPlaceName=findViewById(R.id.txtCurrentPlactName);
@@ -158,9 +171,25 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
         userPreferences=new UserPreferences(MainActivity.this);
         autoCompleteText =  findViewById(R.id.input_search);
-        getDeviceLocation();
-        init1();
 
+
+
+
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        if (null != activeNetwork) {
+            if(activeNetwork.getType() == ConnectivityManager.TYPE_WIFI)
+
+                getDeviceLocation();
+                init1();
+                answer="You are connected to a WiFi Network";
+            if(activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
+                answer="You are connected to a Mobile Network";
+        }
+        else
+            answer = "No internet Connectivity";
+        Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_LONG).show();
 
 
     }
@@ -416,6 +445,21 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         switch (item.getItemId()){
             case R.id.itemAbout:
 
+                Intent intent=new Intent(MainActivity.this,About_us.class);
+                startActivity(intent);
+
+                return true;
+
+            case R.id.itemFeedback:
+                Uri uri = Uri.parse("https://play.google.com/store/apps/developer?id=Tusu+USA"); // missing 'http://' will cause crashed
+                Intent intent1 = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent1);
+                return true;
+            case R.id.itemFuture_Feature:
+
+                Intent intent2=new Intent(MainActivity.this,Featires_Sections.class);
+                startActivity(intent2);
+
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -527,4 +571,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             places.release();
         }
     };
+
+
 }
+
