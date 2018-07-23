@@ -1,14 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary3"
+    android:layout_height="match_parent"
     tools:context=".Another_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:text="Location Map Detect:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/map"
+            tools:context=".MapsActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+        <View
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:text="Radar Satellite Condition:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <ImageView
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:id="@+id/viewRadarPlusSatellite"
+            android:layout_height="270dp"/>
+
+        <View
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:text="Satellite Condition:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <ImageView
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:id="@+id/viewSatellite"
+            android:layout_height="270dp"/>
+
+        <View
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:text="Radar Condition:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <ImageView
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:id="@+id/viewRadar"
+            android:layout_height="270dp"/>
+
+        <View
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

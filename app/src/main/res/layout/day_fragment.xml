@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@color/colorPrimary3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@android:color/white"
+
+                android:textSize="20dp"
+                android:text="শনিবার"
+                android:id="@+id/txtDailyDay"
+                android:fontFamily="sans-serif"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtDailyDate"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:text="17/07/2018"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@android:color/white"
+                    android:fontFamily="sans-serif"
+                    android:textSize="20dp"
+                    android:id="@+id/txtDailyCondition"
+                    android:text="Rain"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    android:id="@+id/txtDailyHigh"
+                    android:text="সর্বোচ্চ:    35°c"
+                    android:fontFamily="sans-serif"
+                    android:drawableRight="@drawable/up1"
+                    android:drawablePadding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:textColor="@android:color/white"
+                    android:id="@+id/txtDailyLow"
+                    android:textSize="20dp"
+                    android:fontFamily="sans-serif"
+                    android:drawableRight="@drawable/down"
+                    android:drawablePadding="10dp"
+                    android:text="সর্বোনিম্ন:  24°c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageDaily"
+                    android:src="@drawable/icon_0"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtDailyDetails1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Showers and thunderstorms likely. Low 26C. Winds SSE at 10 to 15 km/h. Chance of rain 80%."
+                android:textColor="@android:color/white"
+                android:textSize="16dp" />
+
+            <View
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="2dp" />
+
+
+            <TextView
+                android:id="@+id/txtDailyDetails2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Showers and thunderstorms likely. Low 26C. Winds SSE at 10 to 15 km/h. Chance of rain 80%."
+                android:textColor="@android:color/white"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

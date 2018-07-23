@@ -3,6 +3,9 @@ package tusu.develop.com.bmpweather;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -17,27 +20,51 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.AutocompletePrediction;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.PlaceBuffer;
+import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import tusu.develop.com.bmpweather.Adapter.PlaceAutocompleteAdapter;
 import tusu.develop.com.bmpweather.Adapter.ViewPagerAdapter;
 import tusu.develop.com.bmpweather.Api.OpenWeatherAPI;
 import tusu.develop.com.bmpweather.Api.WUnderGroundsAPI;
@@ -46,10 +73,11 @@ import tusu.develop.com.bmpweather.OpenWeather.OpenWeatherMain;
 import tusu.develop.com.bmpweather.ShareperencesData.UserPreferences;
 import tusu.develop.com.bmpweather.UnderGrounds_f_weather.UnForecast;
 import tusu.develop.com.bmpweather.WnderGroundsHourWeather.WnderGroundsHourWeather;
+import tusu.develop.com.bmpweather.WunderGroundsSky.WunderGroundsSky;
 import tusu.develop.com.bmpweather.WundergroundWeather.UnderGroundsWeather;
 import tusu.develop.com.bmpweather.YahooWeather.YahooWeather;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
 
     private Toolbar toolbar;
     private ViewPagerAdapter adapter;
@@ -58,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtPlaceName,txtWeatherCondition,txtCurrentTemp,txtMin,txtMax,txtTodayDay;
     private UserPreferences userPreferences;
+    private TextView txtSunrise,txtSunset;
+    private ImageView imageCurrent;
 
 
     private static final String TAG = "MainActivity";
@@ -65,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
     private static final String COURSE_LOCATIONS=Manifest.permission.ACCESS_COARSE_LOCATION;
     private static final int LOCATION_PERMISSIN_REQUEST_CODE=1234;
     private static final float DEFAULT_ZOOM=14f;
+    private AutoCompleteTextView autoCompleteText;
+    private PlaceAutocompleteAdapter mPlaceAutocompleteAdapter;
+    private GoogleApiClient mGoogleApiClient;
+    private static final LatLngBounds LAT_LNG_BOUNDS = new LatLngBounds(
+            new LatLng(23.0676199,90.2708762), new LatLng(23.750854, 90.393527));
+
 
 
     //vars
@@ -100,7 +136,10 @@ public class MainActivity extends AppCompatActivity {
         txtCurrentTemp=findViewById(R.id.txtCurrentTemp);
         txtMax=findViewById(R.id.txtCurrentMax);
         txtMin=findViewById(R.id.txtCurrentMin);
-//        txtTodayDay=findViewById(R.id.txtToday);
+
+        txtSunrise=findViewById(R.id.txtSunrise);
+        txtSunset=findViewById(R.id.txtSunSet);
+        imageCurrent=findViewById(R.id.imageCurrent);
 
 
         initCollapsingToolbar();
@@ -136,7 +175,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         userPreferences=new UserPreferences(MainActivity.this);
+        autoCompleteText =  findViewById(R.id.input_search);
         getDeviceLocation();
+        init1();
+
+
 
     }
 
@@ -244,6 +287,7 @@ public class MainActivity extends AppCompatActivity {
                             getLatLon(new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude()));
 
 
+
                         }else {
                             Log.d(TAG, "onComplete: current location is null");
                             Toast.makeText(MainActivity.this, "unable to get current locations", Toast.LENGTH_SHORT).show();
@@ -268,40 +312,41 @@ public class MainActivity extends AppCompatActivity {
 
         String wUnderGround_url="api/8ffec187b0d5a8ad/conditions/q/"+latLng.latitude+","+latLng.longitude+".json";
         String wUnderGround_Forecast_url="api/8ffec187b0d5a8ad/forecast10day/q/"+latLng.latitude+","+latLng.longitude+".json";
-        String wUnderGround_HOUR_Forecast_url="api/8ffec187b0d5a8ad/hourly/q/"+latLng.latitude+","+latLng.longitude+".json";
+        String wUnderGround_Sky_url="api/8ffec187b0d5a8ad/astronomy/q/"+latLng.latitude+","+latLng.longitude+".json";
 
 
-        //Yahoo Sections
+
+        //WunderGroundsSky Sections;
 
         Retrofit retrofit=new Retrofit.Builder()
-                .baseUrl(YAHOO_BASE_URL)
+                .baseUrl(WUnderGrounds_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        yahooApi=retrofit.create(YahooApi.class);
-        Call<YahooWeather> yahooWeatherCall=yahooApi.yahoowearher(yahoo_url);
-        yahooWeatherCall.enqueue(new Callback<YahooWeather>() {
+        WUnderGroundsAPI wUnderGroundsAPISky=retrofit.create(WUnderGroundsAPI.class);
+        Call<WunderGroundsSky> underGroundsSky=wUnderGroundsAPISky.wunderGroundsSky(wUnderGround_Sky_url);
+        underGroundsSky.enqueue(new Callback<WunderGroundsSky>() {
             @Override
-            public void onResponse(Call<YahooWeather> call, Response<YahooWeather> response) {
+            public void onResponse(Call<WunderGroundsSky> call, Response<WunderGroundsSky> response) {
                 if (response.code()==200){
-                    Toast.makeText(MainActivity.this, "Data Founds", Toast.LENGTH_SHORT).show();
-                    Log.d(TAG, "onResponse: Data Founds");
+                    WunderGroundsSky wunderGroundsSky=response.body();
 
-                    YahooWeather yahooWeather=response.body();
+                    String sunrise=wunderGroundsSky.getSunPhase().getSunrise().getHour()+":"+wunderGroundsSky.getSunPhase().getSunrise().getMinute()+" am";
 
-                    String sunrise=yahooWeather.getQuery().getResults().getChannel().getAstronomy().getSunrise().toString()+" ";
-                    String sunset=yahooWeather.getQuery().getResults().getChannel().getAstronomy().getSunrise().toString()+" ";
-                    String humidity=yahooWeather.getQuery().getResults().getChannel().getAtmosphere().getHumidity().toString()+"%";
+                    int sunsetHour= Integer.parseInt((wunderGroundsSky.getMoonPhase().getSunset().getHour()))-12;
+                    String sunset=String.valueOf(sunsetHour)+":"+wunderGroundsSky.getMoonPhase().getSunset().getMinute()+" pm";
 
-                    userPreferences.setSunrise(sunrise);
-                    userPreferences.setSunset(sunset);
-                    userPreferences.setHumidity(humidity);
+
+
+                    txtSunrise.setText("সূর্যোদয়: "+sunrise);
+                    txtSunset.setText("   সূর্যাস্ত: "+sunset);
+
                 }
             }
 
             @Override
-            public void onFailure(Call<YahooWeather> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Data Not Found", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<WunderGroundsSky> call, Throwable t) {
+
             }
         });
 
@@ -322,13 +367,16 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Data Found", Toast.LENGTH_SHORT).show();
                     UnderGroundsWeather underGroundsWeather=response.body();
 
+                    String imageurl=underGroundsWeather.getCurrentObservation().getIconUrl();
+
+                    if (underGroundsWeather.getCurrentObservation().getWeather().toString()=="Overcast"){
+                        imageCurrent.setBackgroundResource((R.drawable.cloudy));
+                    }else {
+                        Picasso.get().load(imageurl).into(imageCurrent);
+                    }
 
 
-                    String visibility=underGroundsWeather.getCurrentObservation().getVisibilityKm().toString()+"Km";
-                    String feelsLike=underGroundsWeather.getCurrentObservation().getFeelslikeC().toString()+"°";
-                    String UvIndex=underGroundsWeather.getCurrentObservation().getDewpointC().toString()+" ";
-
-                    txtPlaceName.setText(underGroundsWeather.getCurrentObservation().getDisplayLocation().getCity().toString()+" ");
+                    txtPlaceName.setText(underGroundsWeather.getCurrentObservation().getDisplayLocation().getFull().toString()+" ");
                     txtWeatherCondition.setText(underGroundsWeather.getCurrentObservation().getWeather().toString()+" ");
                     txtCurrentTemp.setText(underGroundsWeather.getCurrentObservation().getTempC().toString()+"°c");
 
@@ -359,11 +407,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Data Founds", Toast.LENGTH_SHORT).show();
                     UnForecast underGroundsForecastWeather=response.body();
 
-                    String DetilsCOnditions=underGroundsForecastWeather.getForecast().getTxtForecast().getForecastday().get(0).getFcttext().toString()+" ";
-                    String DetailsConditons1=underGroundsForecastWeather.getForecast().getTxtForecast().getForecastday().get(0).getFcttextMetric().toString()+" ";
-
-
-                    txtMin.setText("সর্বোনিম্ন: "+underGroundsForecastWeather.getForecast().getSimpleforecast().getForecastday().get(0).getLow().getCelsius()+"°c");
+                    txtMin.setText("সর্বোনিম্ন:  "+underGroundsForecastWeather.getForecast().getSimpleforecast().getForecastday().get(0).getLow().getCelsius()+"°c");
                     txtMax.setText("সর্বোচ্চ:    "+underGroundsForecastWeather.getForecast().getSimpleforecast().getForecastday().get(0).getHigh().getCelsius()+"°c");
 
                 }
@@ -374,6 +418,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
     }
 
@@ -387,8 +432,118 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            
+            case R.id.itemAbout:
+                Intent intent=new Intent(MainActivity.this,SSSSSSSSSS.class);
+                startActivity(intent);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    private void init1() {
+        Log.d(TAG, "init: initializing");
+
+        mGoogleApiClient = new GoogleApiClient
+                .Builder(this)
+                .addApi(Places.GEO_DATA_API)
+                .addApi(Places.PLACE_DETECTION_API)
+                .enableAutoManage(this, this)
+                .build();
+
+        autoCompleteText.setOnItemClickListener(mAutocompleteClickListener);
+
+        mPlaceAutocompleteAdapter = new PlaceAutocompleteAdapter(this, mGoogleApiClient,
+                LAT_LNG_BOUNDS, null);
+
+        autoCompleteText.setAdapter(mPlaceAutocompleteAdapter);
+
+        autoCompleteText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH
+                        || actionId == EditorInfo.IME_ACTION_DONE
+                        || keyEvent.getAction() == KeyEvent.ACTION_DOWN
+                        || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER) {
+
+                    //execute our method for searching
+                    geoLocate();
+                }
+
+                return false;
+
+            }
+        });
+
+    }
+
+    private void geoLocate() {
+        Log.d(TAG, "geoLocate: geolocating");
+
+        String searchString = autoCompleteText.getText().toString();
+
+        Geocoder geocoder = new Geocoder(MainActivity.this);
+        List<Address> list = new ArrayList<>();
+        try{
+            list = geocoder.getFromLocationName(searchString, 1);
+        }catch (IOException e){
+            Log.e(TAG, "geoLocate: IOException: " + e.getMessage() );
+        }
+
+        if(list.size() > 0){
+            Address address = list.get(0);
+
+            Log.d(TAG, "geoLocate: found a location: " + address.toString());
+            //Toast.makeText(this, address.toString(), Toast.LENGTH_SHORT).show();
+
+            //getLatLon(new LatLng(address.getLatitude(),address.getLongitude()));
+
+        }
+    }
+
+    private AdapterView.OnItemClickListener mAutocompleteClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+            final AutocompletePrediction item = mPlaceAutocompleteAdapter.getItem(i);
+            final String placeId = item.getPlaceId();
+
+            PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
+                    .getPlaceById(mGoogleApiClient, placeId);
+            placeResult.setResultCallback(mUpdatePlaceDetailsCallback);
+
+        }
+    };
+
+    private ResultCallback<PlaceBuffer> mUpdatePlaceDetailsCallback = new ResultCallback<PlaceBuffer>() {
+        @Override
+        public void onResult(@NonNull PlaceBuffer places) {
+            if(!places.getStatus().isSuccess()){
+                Log.d(TAG, "onResult: Place query did not complete successfully: " + places.getStatus().toString());
+                places.release();
+                return;
+            }
+            final Place place = places.get(0);
+
+            try{
+
+                String name=place.getName().toString();
+                Toast.makeText(MainActivity.this, "দুঃক্ষিত আপনি লোকেশন Search দিয়েছেন "+name+" কিন্তু Google আপনার Search কৃত জায়গাটি ঠিক নামে দেখাতে পারছে না। একটু ভাল ভাবে খেয়াল করলে দেখবেন আপনার লোকেশটিই দেখাচ্ছে।  'Thanks ", Toast.LENGTH_SHORT).show();
+
+                getLatLon(place.getLatLng());
+
+            }catch (NullPointerException e){
+                Log.e(TAG, "onResult: NullPointerException: " + e.getMessage() );
+            }
+
+
+            places.release();
+        }
+    };
 }

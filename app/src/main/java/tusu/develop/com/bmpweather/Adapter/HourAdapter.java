@@ -57,8 +57,81 @@ public class HourAdapter extends RecyclerView.Adapter<HourAdapter.MYViewHolder>{
         String dewPoint=("DEW POINT: "+hourWeather.getDewpoint().getMetric().toString()+"°");
         holder.txtDEWPOINT.setText(dewPoint);
 
-        String url=hourWeather.getIconUrl();
-        Picasso.get().load(url).into(holder.imageHour);
+
+        int hourfctcode= Integer.parseInt(hourWeather.getFctcode());
+        if (hourfctcode==1){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/clear.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==2){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/partlycloudy.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==3){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/mostlycloudy.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==4){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/cloudy.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==5){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/hazy.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==6){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/fog.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==7){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/clear.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==8){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/clear.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==9){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/clear.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==10){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/chancesnow.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==11){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/chancesnow.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==12){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/chancerain.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==13){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/rain.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==14){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/chancetstorms.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==15){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/tstorms.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==16){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/flurries.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==17){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/clear.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==18){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/chancesnow.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==19){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/chancesnow.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==20){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/snow.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==21){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/snow.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==22){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/chanceflurries.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==23){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/flurries.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }else if (hourfctcode==24){
+            String urlClear="https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/HEAD/dist/icons/black/png/256x256/unknown.png";
+            Picasso.get().load(urlClear).into(holder.imageHour);
+        }
 
 
     }

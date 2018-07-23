@@ -20,10 +20,11 @@
     <!--<color name="icons">#FFFFFF</color>-->
     <!--<color name="divider">#BDBDBD</color>-->
 
-    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimary">#0e67b4</color>
     <color name="colorPrimary1">#06b4ca</color>
     <color name="colorPrimary2">#54c5d2</color>
-    <color name="colorPrimaryDark">#0097A7</color>
+    <color name="colorPrimary3">#1685da</color>
+    <color name="colorPrimaryDark">#087ee4</color>
     <color name="primary_light">#B2EBF2</color>
     <color name="colorAccent">#CDDC39</color>
     <color name="primary_text">#212121</color>

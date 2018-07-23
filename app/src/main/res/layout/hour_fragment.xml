@@ -11,7 +11,7 @@
 
 
         <LinearLayout
-            android:background="@color/colorPrimary2"
+            android:background="@color/colorPrimary3"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -27,7 +27,7 @@
                     android:id="@+id/txtDailyHour"
                     android:textSize="19dp"
                     android:textColor="@android:color/white"
-                    android:fontFamily="@font/arimo"
+                    android:fontFamily="sans-serif"
                     android:text="July 20  6:00:00 PM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -37,7 +37,7 @@
                     android:id="@+id/txtHourTemp"
                     android:textSize="25dp"
                     android:textColor="@android:color/white"
-                    android:fontFamily="@font/arimo"
+                    android:fontFamily="sans-serif"
                     android:text="তাপমাত্রা: 20°c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -47,7 +47,7 @@
                     android:id="@+id/txtHourCondition"
                     android:textSize="19dp"
                     android:textColor="@android:color/white"
-                    android:fontFamily="@font/arimo"
+                    android:fontFamily="sans-serif"
                     android:text="অবস্তা: Rain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -57,7 +57,7 @@
                     android:id="@+id/txtHourWind"
                     android:textSize="19dp"
                     android:textColor="@android:color/white"
-                    android:fontFamily="@font/arimo"
+                    android:fontFamily="sans-serif"
                     android:text="বাতাসের গতিবেগ: 20.6m/s"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -68,7 +68,6 @@
             <LinearLayout
                 android:layout_weight="0.8"
                 android:layout_width="0dp"
-                android:background="@drawable/image_back"
                 android:layout_height="match_parent">
 
                 <ImageView

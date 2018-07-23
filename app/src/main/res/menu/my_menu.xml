@@ -6,12 +6,8 @@
     <item android:title="Settings"  android:id="@+id/itemSettings"/>
     <item android:title="About Us"  android:id="@+id/itemAbout"/>
     <item android:title="Feedback"  android:id="@+id/itemFeedback"/>
+    <item android:title="Future Feature"  android:id="@+id/itemFuture_Feature"/>
 
-    <item
-        android:id="@+id/itemSearch"
-        android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always"
-        app:actionViewClass="android.support.v7.widget.SearchView"
-        android:title="Search"/>
+
 
 </menu>
